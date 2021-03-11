@@ -1,5 +1,5 @@
 # ur_extra_changes
-Those are the extra changes needed so that the driver or the arm + wrist cam + gripper would work
+Those are the extra changes needed so that the driver or the arm + wrist cam + gripper would work .
 
 ## Changes:
 
