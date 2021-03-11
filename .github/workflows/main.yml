@@ -1,0 +1,47 @@
+name: RIO build workflow
+
+on:
+  push:
+    branches:
+      - hotfix/*
+      - bugfix/*
+      - feature/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_BEFORE_SHA: ${{ github.event.before }}
+      DEFAULT_BEFORE_SHA: "0000000000000000000000000000000000000000"
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python 2.7
+      uses: actions/setup-python@v2
+      with:
+        python-version: 2.7
+
+    - name: Install RIO sdk
+      run: pip install -r .github/requirements.txt
+
+    - name: Create RIO build
+      if: ${{ env.GITHUB_BEFORE_SHA == env.DEFAULT_BEFORE_SHA }}
+      uses: Parag357/create-rio-build-action@v1.5
+
+    - name: Create RIO package
+      if: ${{ env.GITHUB_BEFORE_SHA == env.DEFAULT_BEFORE_SHA }}
+      uses: Parag357/create-rio-package-action@v1.2
+
+    - name: Auto-commit details during workflow run
+      if: ${{ env.GITHUB_BEFORE_SHA == env.DEFAULT_BEFORE_SHA }}
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Apply automatic changes
+        commit_options: '--no-verify --signoff'
+
+    - name: Trigger RIO build
+      if: ${{ env.GITHUB_BEFORE_SHA != env.DEFAULT_BEFORE_SHA}}
+      uses: Parag357/trigger-rio-build-action@v1.3
+
+

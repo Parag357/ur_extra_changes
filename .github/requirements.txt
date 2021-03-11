@@ -1,0 +1,2 @@
+rapyuta-io @ https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.18.1-py2-none-any.whl
+PyYAML==5.4.1

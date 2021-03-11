@@ -1,0 +1,38 @@
+name: ur_extra_changes_package
+packageVersion: v1.0.0
+description: ''
+bindable: true
+plans:
+- name: default
+  metadata: {}
+  singleton: false
+  components:
+  - name: ur_extra_changes_component
+    description: ''
+    cloudInfra:
+      replicas: 1
+      endpoints: []
+    ros:
+      topics: []
+      services: []
+      actions: []
+      isROS: true
+      ros_distro: kinetic
+    requiredRuntime: cloud
+    architecture: amd64
+    executables:
+    - name: ur_extra_changes_executable
+      simulationOptions:
+        simulation: false
+      buildGUID:
+      cmd: []
+      limits:
+        cpu: 1
+        memory: 4096
+    parameters: []
+    rosBagJobDefs: []
+  includePackages: []
+  dependentDeployments: []
+  inboundROSInterfaces:
+    anyIncomingScopedOrTargetedRosConfig: false
+  exposedParameters: []

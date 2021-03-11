@@ -1,0 +1,11 @@
+build_name: extra_changes
+strategy_type: Source
+architecture: amd64
+contextDir: ''
+isRos: True
+rosDistro: kinetic
+dockerFilePath: ''
+secret:
+dockerPullSecret:
+dockerPushSecret:
+dockerPushRepository:
