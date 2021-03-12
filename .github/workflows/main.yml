@@ -13,6 +13,8 @@ jobs:
     env:
       GITHUB_BEFORE_SHA: ${{ github.event.before }}
       DEFAULT_BEFORE_SHA: "0000000000000000000000000000000000000000"
+      AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+      PROJECT_ID: ${{ secrets.PROJECT_ID }}
 
     steps:
     - uses: actions/checkout@v2
