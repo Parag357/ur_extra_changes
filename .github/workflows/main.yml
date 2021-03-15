@@ -44,6 +44,6 @@ jobs:
 
     - name: Trigger RIO build
       if: ${{ env.GITHUB_BEFORE_SHA != env.DEFAULT_BEFORE_SHA}}
-      uses: Parag357/trigger-rio-build-action@v1.6
+      uses: Parag357/trigger-rio-build-action@v1.7
 
 
