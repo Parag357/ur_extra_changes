@@ -25,8 +25,8 @@ if isRos:
     simulationOptions = SimulationOptions(False)
     buildOptions = BuildOptions(catkinOptions=[CatkinOption()])
     rosDistro = create_build_dict['rosDistro']
-repository = os.getenv('GITHUB_SERVER_URL') + '/' + os.getenv('GITHUB_REPOSITORY') + '.git'
 
+repository = os.getenv('GITHUB_SERVER_URL') + '/' + os.getenv('GITHUB_REPOSITORY') + '.git'
 build = Build(buildName=create_build_dict['build_name'],
               strategyType=create_build_dict['strategy_type'],
               repository=repository,
@@ -36,6 +36,7 @@ build = Build(buildName=create_build_dict['build_name'],
               contextDir=create_build_dict['contextDir'],
               simulationOptions=simulationOptions,
               buildOptions=buildOptions)
+
 build = client.create_build(build)
 build.poll_build_till_ready()
 build_id = build.guid
