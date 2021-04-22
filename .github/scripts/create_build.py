@@ -22,7 +22,7 @@ rosDistro = None
 isRos = create_build_dict['isRos']
 
 if isRos:
-    simulationOptions = SimulationOptions(create_build_dict['SimulationOption'])
+    simulationOptions = SimulationOptions(bool(create_build_dict['SimulationOption']))
     buildOptions = BuildOptions(catkinOptions=[CatkinOption()])
     rosDistro = create_build_dict['rosDistro']
 
