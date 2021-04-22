@@ -11,7 +11,7 @@ client = get_rio_client()
 if not client:
     raise TypeError('error in creating rio client.')
 
-# Create a Build
+# Create Build
 
 with open(sys.argv[1], 'r') as read_file:
     create_build_dict = yaml.load(read_file, Loader=yaml.FullLoader)
