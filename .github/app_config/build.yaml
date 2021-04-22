@@ -4,6 +4,7 @@ architecture: amd64
 contextDir: ''
 isRos: True
 rosDistro: kinetic
+SimulationOption: ''
 dockerFilePath: ''
 secret:
 dockerPullSecret:
